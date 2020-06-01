@@ -6,7 +6,7 @@ class Form {
 
         var Name = createInput('Name')
         var button = createButton('Ready')
-        var ready = createElement('h3');
+        // var ready = createElement('h3');
 
         Name.position(130,160);
         button.position(250,200);
@@ -20,43 +20,65 @@ class Form {
             playerCountRef.once("value", function(data){
                 var count = data.val();
                 if(count === 0){
+                    console.log(1);
                     
+                    database.ref('player1').update({
+                        name : name
+                        
+                    })
                     database.ref('/').update({
-                        player1 : name,
                         playerCount : 1
                     })
+                    // ready.html("get ready " + name )
+                    // ready.position(displayWidth/4,displayHeight/4)
+            
                 }else if(count === 1){
                     
-                    database.ref('/').update({
+                    database.ref('player2').update({
                         // playerCount : 1;
-                        player2 : name,
+                        name : name,
+                    })
+                    database.ref('/').update({
                         playerCount : 2
                     })
+                    // ready.html("get ready " + name )
+                    // ready.position(displayWidth/4,displayHeight/4)
                     
                 }else if(count === 2){
                     
-                    database.ref('/').update({
+                    database.ref('player3').update({
                         // playerCount : 1;
-                        player3 : name,
+                        name : name,
+                    })
+                    database.ref('/').update({
                         playerCount : 3
                     })
+                    // ready.html("get ready " + name )
+                    // ready.position(displayWidth/4,displayHeight/4)
                     
                 }else if(count === 3){
                     
-                    database.ref('/').update({
+                    database.ref('player4').update({
                         // playerCount : 1;
-                        player4 : name,
+                        name : name,
+                    })
+                    database.ref('/').update({
                         playerCount : 4
                     })
+
+                    database.ref('/').update({
+                        gameState : 1
+                    })
+                    // ready.html("get ready " + name )
+                    // ready.position(displayWidth/4,displayHeight/4)
+                      
                     
                 }
             })
-
-            
-            ready.html("get ready " + name )
-            ready.position(displayWidth/4,displayHeight/4)
-
         })
 
+    }
+    display() {
+        // ready.hide();
     }
 }
