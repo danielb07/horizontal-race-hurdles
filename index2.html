@@ -1,0 +1,79 @@
+<!DOCTYPE html><html>
+    <head>
+      
+    <meta charset="utf-8">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+     <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDei4fGUizlhMfIgHs5y9ZpDjXla_mWrIA",
+        authDomain: "horizontal-hurdles-game-60141.firebaseapp.com",
+        databaseURL: "https://horizontal-hurdles-game-60141.firebaseio.com",
+        projectId: "horizontal-hurdles-game-60141",
+        storageBucket: "horizontal-hurdles-game-60141.appspot.com",
+        messagingSenderId: "732575091955",
+        appId: "1:732575091955:web:8f1c43d124f8d8eddf7b86"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+  </head>
+  <body>
+    
+    <script>
+      firebasesetup();
+      function firebasesetup(){
+    database.ref('/').set({
+        playerCount : 0,
+        gameState : 0,
+        
+        
+    })
+    database.ref('player1').set({
+        name : "",
+        sprite : "blue",
+        position : {
+            x : 82,
+            y : 108
+        }
+        
+    })
+
+    database.ref('player2').set({
+        name : "",
+        sprite :"green",
+        position : {
+            x : 82, 
+            y : 140
+        }
+    })
+
+    database.ref('player3').set({
+        name : "",
+        sprite : "cyan",
+        position : {
+            x : 82, 
+            y : 170 
+        }
+    })
+
+    database.ref('player4').set({
+        name : "",
+        sprite : "purple",
+        position : {
+            x : 82, 
+            y : 200 
+        }
+    })
+
+}   
+    </script>
+    <h1>all clear</h1>
+  </body>
+</html>

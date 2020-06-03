@@ -20,7 +20,6 @@ class Form {
             playerCountRef.once("value", function(data){
                 var count = data.val();
                 if(count === 0){
-                    console.log(1);
                     
                     database.ref('player1').update({
                         name : name

@@ -13,7 +13,6 @@ class Game {
         var gameStateRef = database.ref('gameState')
         gameStateRef.once("value", function(data){
             var gameState = data.val();
-            console.log(gameState);
             
             if(gameState === 0){
 
